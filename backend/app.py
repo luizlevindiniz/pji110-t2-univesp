@@ -41,15 +41,22 @@ app.add_middleware(
     https_only=False,
 )
 
-# API Routes
+# API Router
 api = APIRouter(prefix="/api")
+# Routes
 api.include_router(api_status)
+# Appending api on app
+app.include_router(api)
 
 
 # Swagger Config
 def custom_openapi() -> Dict[str, Any] | None:
     description: str = DESCRIPTION + f'<br><br> <a href="{str(GITHUB)}">GitHub</a>'
-
+    assert (
+        isinstance(description, str)
+        and isinstance(PROJECT_TITLE, str)
+        and isinstance(VERSION, str)
+    )
     if isinstance(description, str):
 
         if app.openapi_schema:
