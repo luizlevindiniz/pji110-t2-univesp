@@ -1,0 +1,9 @@
+uvicorn
+gunicorn
+python-dotenv
+itsdangerous
+loguru
+fastapi
+pydantic
+pydantic[dotenv]
+pydantic[email]
