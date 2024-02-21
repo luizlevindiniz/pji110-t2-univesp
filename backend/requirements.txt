@@ -3,6 +3,7 @@ gunicorn
 python-dotenv
 itsdangerous
 loguru
+SQLAlchemy
 fastapi
 pydantic
 pydantic[dotenv]

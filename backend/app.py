@@ -5,6 +5,7 @@ import dotenv
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
+from routes.churches_routes import api_churches
 from routes.status_routes import api_status
 from starlette.middleware.sessions import SessionMiddleware
 
