@@ -1,5 +1,3 @@
-from typing import Literal
-
 from fastapi import APIRouter, Request
 
 api_status = APIRouter(prefix="/status")

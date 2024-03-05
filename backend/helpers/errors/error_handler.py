@@ -15,6 +15,7 @@ class ErrorHandler:
     @classmethod
     def handle_error(
         cls,
+        route: str,
         exception: Union[Exception, ErrorHTTP],
         traceback: str,
     ) -> None:

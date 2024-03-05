@@ -14,3 +14,6 @@ class ChurchModel(Base_DB_Model, CreatedBase, EditedBase, DeletedBase):
         return dict(
             {c.name: str(getattr(self, c.name)) for c in self.__table__.columns}
         )
+
+    def __repr__(self) -> str:
+        return f"<Church {self.name} created at {self.created_at}>"

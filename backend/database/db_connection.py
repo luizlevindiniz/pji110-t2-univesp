@@ -1,18 +1,19 @@
 from contextlib import contextmanager
-from typing import Generator
 
+from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import sessionmaker
 
-# criar conexao com o postgres usando sql alchemy e psycog2
-# https://github.com/jod35/Build-a-fastapi-and-postgreSQL-API-with-SQLAlchemy
-SessionLocal = sessionmaker(autocommit=False, autoflush=False)
-# bind=db_connection.engine
 Base_DB_Model = declarative_base()
+engine = create_engine(
+    "postgresql://{YOUR_DATABASE_USER}:{YOUR_DATABASE_PASSWORD}@localhost/{YOUR_DATABASE_NAME}",
+    echo=True,
+)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 @contextmanager
-def get_session() -> Generator[Session, None, None]:
+def get_session(*args, **kwargs):
     session = SessionLocal()
     try:
         yield session

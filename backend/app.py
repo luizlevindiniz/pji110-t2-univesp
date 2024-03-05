@@ -46,31 +46,32 @@ app.add_middleware(
 api = APIRouter(prefix="/api")
 # Routes
 api.include_router(api_status)
+api.include_router(api_churches)
 # Appending api on app
 app.include_router(api)
 
 
 # Swagger Config
-def custom_openapi() -> Dict[str, Any] | None:
-    description: str = DESCRIPTION + f'<br><br> <a href="{str(GITHUB)}">GitHub</a>'
+def custom_openapi() -> Dict[str, Any]:
+    description: str = f'{DESCRIPTION} <br><br> <a href="{str(GITHUB)}">GitHub</a>'
     assert (
         isinstance(description, str)
         and isinstance(PROJECT_TITLE, str)
         and isinstance(VERSION, str)
     )
-    if isinstance(description, str):
 
-        if app.openapi_schema:
-            return app.openapi_schema
-        openapi_schema = get_openapi(
-            title=PROJECT_TITLE,
-            version=VERSION,
-            description=description,
-            routes=app.routes,
-        )
-        app.openapi_schema = openapi_schema
+    if app.openapi_schema:
+        return app.openapi_schema
+
+    openapi_schema = get_openapi(
+        title=PROJECT_TITLE,
+        version=VERSION,
+        description=description,
+        routes=app.routes,
+    )
+    app.openapi_schema = openapi_schema
 
     return app.openapi_schema
 
 
-app.openapi = custom_openapi
+app.openapi = custom_openapi  # type: ignore

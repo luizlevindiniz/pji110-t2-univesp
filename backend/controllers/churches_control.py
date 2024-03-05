@@ -8,7 +8,7 @@ from schemas.churches_schema import Church
 
 class ChurchesControl:
     def __init__(self) -> None:
-        self.session_maker = get_session()
+        self.session_maker = get_session
         self.repository = ChurchRepository()
 
     # Create

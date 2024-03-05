@@ -29,7 +29,7 @@ async def create_church(
     except Exception as e:
         print(e)
         ErrorHandler.handle_error(
-            route=request.url, exception=e, traceback=format_exc(), user=current_user
+            route=request.url, exception=e, traceback=format_exc()
         )
     return JSONResponse(
         content=response_json, status_code=200, media_type="application/json"
@@ -53,7 +53,7 @@ async def get_all_churches(request: Request, current_user: str) -> JSONResponse:
     except Exception as e:
         print(e)
         ErrorHandler.handle_error(
-            route=request.url, exception=e, traceback=format_exc(), user=current_user
+            route=request.url, exception=e, traceback=format_exc()
         )
     return JSONResponse(
         content=response_json, status_code=200, media_type="application/json"
