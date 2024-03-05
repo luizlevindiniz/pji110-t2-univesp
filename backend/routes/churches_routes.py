@@ -1,12 +1,11 @@
 from traceback import format_exc
 
+from controllers.churches_control import ChurchesControl
 from fastapi import APIRouter, Request
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from helpers.errors import ErrorHandler
 from schemas.churches_schema import Church
-
-from backend.controllers.churches_control import ChurchesControl
 
 api_churches = APIRouter(prefix="/churches")
 

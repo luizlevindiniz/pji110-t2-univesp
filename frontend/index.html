@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Find My Church</title>
+    <link rel="icon" type="image/svg+xml" href="/church.svg" />
+    <link rel="stylesheet" href="scss/styles.scss" />
+    <script type="module" src="main.js"></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+  <body class="d-flex text-center text-white">
+    <div class="cover-container d-flex mx-auto flex-column">
+      <header class="mb-auto sticky-top">
+        <nav class="navbar navbar-expand-md" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a href="#" class="navbar-brand">⛪ Find My Church</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"> </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="navbar-nav ms-auto">
+                <a href="/about" class="nav-link">Sobre Nós</a>
+                <a href="/churches/create" class="nav-link"
+                  >Cadastre sua Igreja</a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="px-3">
+        <h1 class="call">Para todos os cristãos!</h1>
+        <p class="lead">
+          Católico, protestante, adventista. Seja qual for sua fé, te ajudamos a
+          achar as igrejas da sua região.
+          <br />
+          Comece agora!
+        </p>
+
+        <a
+          href="/churches"
+          class="btn btn-lg btn-secondary font-weight-bold bg-white"
+          >Ver Igrejas</a
+        >
+      </main>
+      <footer class="text-center footer mt-auto py-3 justify-content-center">
+        <p class="text-light">UNIVESP © 2024 - PJI110 - Turma002 - DRP04</p>
+      </footer>
+    </div>
   </body>
 </html>
