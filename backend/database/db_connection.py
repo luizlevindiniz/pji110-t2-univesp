@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 Base_DB_Model = declarative_base()
 engine = create_engine(
-    "postgresql://{YOUR_DATABASE_USER}:{YOUR_DATABASE_PASSWORD}@localhost/{YOUR_DATABASE_NAME}",
+    "postgresql://admin:YrQmziLDIQZjwg8HW2mejfPk7cXmTN8u@dpg-coa0ak21hbls73fgvva0-a.ohio-postgres.render.com/fmcdb",
     echo=True,
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

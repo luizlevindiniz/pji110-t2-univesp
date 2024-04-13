@@ -4,15 +4,17 @@ from sqlalchemy import Column, Integer, String
 
 
 class ChurchModel(Base_DB_Model, CreatedBase, EditedBase, DeletedBase):
-    __table_args__ = {"schema": "schema"}
+    __table_args__ = {"schema": "univesp"}
     __tablename__ = "churches"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(255), name="church")
+    id = Column(Integer, primary_key=True)
+    church = Column(String(255), name="church")
+    location = Column(String(255), name="location")
+    faith = Column(String(255), name="faith")
 
     def as_dict(self) -> dict:
         return dict(
-            {c.name: str(getattr(self, c.name)) for c in self.__table__.columns}
+            {c.church: str(getattr(self, c.church)) for c in self.__table__.columns}
         )
 
     def __repr__(self) -> str:
