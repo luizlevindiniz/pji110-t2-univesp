@@ -7,11 +7,13 @@ from sqlalchemy.orm import Session
 
 class ChurchRepository:
     @classmethod
-    def create_church(cls, data: dict, user: str, db: Session) -> ChurchModel:
+    def create_church(cls, data: dict, db: Session) -> ChurchModel:
         try:
             create: dict = {
-                "name": data["name"],
-                "created_by": user,
+                "church": data.get("church"),
+                "location": data.get("location"),
+                "faith": data.get("faith"),
+                "created_by": "admin",
                 "created_at": datetime.now(),
             }
             new_church = ChurchModel(**create)

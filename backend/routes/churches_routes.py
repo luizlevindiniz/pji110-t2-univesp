@@ -18,12 +18,10 @@ api_churches = APIRouter(prefix="/churches")
     status_code=200,
     response_description="Church created",
 )
-async def create_church(
-    request: Request, data: Church, current_user: str
-) -> JSONResponse:
+async def create_church(request: Request, data: Church) -> JSONResponse:
     try:
         controller = ChurchesControl()
-        results = controller.create_church(data=data, current_user=current_user)
+        results = controller.create_church(data=data)
         response: dict = {"results": results, "detail": "Church created!"}
         response_json = jsonable_encoder(response)
     except Exception as e:
@@ -44,7 +42,7 @@ async def create_church(
     status_code=200,
     response_description="Displaying churches",
 )
-async def get_all_churches(request: Request, current_user: str) -> JSONResponse:
+async def get_all_churches(request: Request) -> JSONResponse:
     try:
         controller = ChurchesControl()
         results = controller.get_all_churches()

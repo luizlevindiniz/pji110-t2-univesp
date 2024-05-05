@@ -7,10 +7,10 @@ class ChurchModel(Base_DB_Model, CreatedBase, EditedBase, DeletedBase):
     __table_args__ = {"schema": "univesp"}
     __tablename__ = "churches"
 
-    id = Column(Integer, primary_key=True)
-    church = Column(String(255), name="church")
-    location = Column(String(255), name="location")
-    faith = Column(String(255), name="faith")
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    church = Column(String(255), name="church", nullable=False)
+    location = Column(String(255), name="location", nullable=False)
+    faith = Column(String(255), name="faith", nullable=False)
 
     def as_dict(self) -> dict:
         return dict(

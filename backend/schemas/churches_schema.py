@@ -2,7 +2,9 @@ from pydantic import BaseModel, Field
 
 
 class Church(BaseModel):
-    name: str = Field(..., min_length=1)
+    church: str = Field(..., min_length=1)
+    location: str = Field(..., min_length=1)
+    faith: str = Field(..., min_length=1)
 
     class Config:
         from_attributes = True

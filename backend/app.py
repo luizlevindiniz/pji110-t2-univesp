@@ -13,13 +13,11 @@ from starlette.middleware.sessions import SessionMiddleware
 env_path = dotenv.find_dotenv(".env", raise_error_if_not_found=True)
 dotenv.load_dotenv(dotenv_path=env_path)
 
-COOKIE = os.getenv("PROJECT_COOKIE")
 PROJECT_NAME = os.getenv("PROJECT_NAME")
 PROJECT_TITLE = os.getenv("PROJECT_TITLE")
 DESCRIPTION = os.getenv("PROJECT_DESCRIPTION")
 GITHUB = os.getenv("PROJECT_GIT_URL")
 VERSION = os.getenv("PROJECT_VERSION")
-
 
 # Print on startup
 print(PROJECT_NAME.upper() if isinstance(PROJECT_NAME, str) else "PROJETO")
@@ -38,7 +36,6 @@ app.add_middleware(
 app.add_middleware(
     SessionMiddleware,
     secret_key="123",
-    session_cookie=COOKIE,
     https_only=False,
 )
 

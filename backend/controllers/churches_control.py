@@ -12,13 +12,11 @@ class ChurchesControl:
         self.repository = ChurchRepository()
 
     # Create
-    def create_church(self, data: Church, current_user: str) -> Union[Church, None]:
+    def create_church(self, data: Church) -> Union[Church, None]:
         try:
             with self.session_maker() as session:
                 create = data.model_dump()
-                church = self.repository.create_church(
-                    data=create, user=current_user, db=session
-                )
+                church = self.repository.create_church(data=create, db=session)
                 if church is None:
                     session.rollback()
                     raise ConnectionError(

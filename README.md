@@ -2,7 +2,7 @@
 
 ## Overview
 
-Find My Church....(continuar)
+Find My Church
 
 Projeto desenvolvido para a disciplina Projeto Integrador
 
@@ -20,7 +20,4 @@ UNIVESP
 
 ## Developers
 
-- [Maria Helena](https://github.com/Mariahsilva)
 - [Luiz Diniz](https://github.com/luizlevindiniz)
-- [Jairo Santos](https://github.com/jairobr1986)
-- [Awana Lima](https://github.com/awanalima)
