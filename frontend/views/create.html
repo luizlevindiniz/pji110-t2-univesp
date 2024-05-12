@@ -6,7 +6,7 @@
     <link rel="icon" type="image/svg+xml" href="/church.svg" />
     <title>Find My Church | Criar Igreja</title>
     <link rel="stylesheet" href="../scss/churches.scss" />
-    <script src="../views/churches.js" type="module" defer></script>
+    <script src="../views/create.js" type="module" defer></script>
   </head>
   <body>
     <div class="app-outlet">
@@ -37,17 +37,17 @@
             <input
               type="text"
               id="church-name"
-              name="church-name"
+              name="churchName"
               class="churches-create-form__form-control"
               required
             />
           </div>
           <div class="churches-create-form__form-group">
-            <label for="church-address">Endereço: </label>
+            <label for="church-address">Cidade: </label>
             <input
               type="text"
               id="church-address"
-              name="church-address"
+              name="churchAddress"
               class="churches-create-form__form-control"
               required
             />
@@ -56,13 +56,13 @@
             <label for="church-type">Fé: </label>
             <select
               id="church-type"
-              name="church-type"
-              class="churches-create-form__form-control"
+              name="churchFaith"
+              class="churches-create-form__form-control church-faith__selector"
               required
             >
-              <option value="catholic">Católica</option>
-              <option value="protestant">Protestante</option>
-              <option value="adventist">Adventista</option>
+              <option value="Católica">Católica</option>
+              <option value="Protestante">Protestante</option>
+              <option value="Adventista">Adventista</option>
             </select>
           </div>
           <div class="churches-create-form__button-group">
