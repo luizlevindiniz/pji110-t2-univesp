@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/church.svg" />
+    <title>Find My Church | Criar Igreja</title>
+    <link rel="stylesheet" href="../scss/churches.scss" />
+    <script src="../views/churches.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="app-outlet">
+      <header class="navbar-header">
+        <div class="nav-head">
+          <div class="nav-head__logo">
+            <a href="#" class="navbar-logo"
+              >⛪ <span class="navbar-logo__text">Find My Church</span></a
+            >
+          </div>
+        </div>
+        <div class="nav-content">
+          <nav class="nav-head__nav">
+            <ul class="nav-head__items">
+              <li class="nav-link"><a href="/">Início</a></li>
+              <li class="nav-link"><a href="./churches.html">Igrejas</a></li>
+              <li class="nav-link"><a href="#">Criar</a></li>
+              <li class="nav-link"><a href="#">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="churches-create-form">
+        <h1 class="churches-create-form__title">Crie sua igreja</h1>
+        <form class="churches-create-form__form">
+          <div class="churches-create-form__form-group">
+            <label for="church-name">Nome: </label>
+            <input
+              type="text"
+              id="church-name"
+              name="church-name"
+              class="churches-create-form__form-control"
+              required
+            />
+          </div>
+          <div class="churches-create-form__form-group">
+            <label for="church-address">Endereço: </label>
+            <input
+              type="text"
+              id="church-address"
+              name="church-address"
+              class="churches-create-form__form-control"
+              required
+            />
+          </div>
+          <div class="churches-create-form__form-group">
+            <label for="church-type">Fé: </label>
+            <select
+              id="church-type"
+              name="church-type"
+              class="churches-create-form__form-control"
+              required
+            >
+              <option value="catholic">Católica</option>
+              <option value="protestant">Protestante</option>
+              <option value="adventist">Adventista</option>
+            </select>
+          </div>
+          <div class="churches-create-form__button-group">
+            <button
+              type="submit"
+              class="churches-create-form__button"
+              data-action="create"
+            >
+              Criar
+            </button>
+          </div>
+        </form>
+      </main>
+      <footer class="churches-page__footer">
+        <p>UNIVESP © 2024 - PJI110 - Turma002 - DRP04</p>
+      </footer>
+    </div>
+  </body>
+</html>
