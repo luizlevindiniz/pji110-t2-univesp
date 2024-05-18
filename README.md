@@ -2,7 +2,7 @@
 
 ## Overview
 
-Find My Church
+Find My Church - DRP04-PJI110-Grupo 004
 
 Projeto desenvolvido para a disciplina Projeto Integrador
 
